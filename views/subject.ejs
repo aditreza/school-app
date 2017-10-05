@@ -4,24 +4,66 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>SUBJECT</title>
+  <title>STUDENT</title>
+
+  <style>
+
+  * {
+    margin: 0px;
+    padding: 0px;
+    }
+
+  .content {
+      background-color: white;
+      width: 1080px;
+      min-height: 700px;
+      /*border:1px solid red;*/
+      margin: 0 auto 0 auto;
+      padding-top:160px;
+  }
+
+  body {
+      /*color: #73879C;*/
+      color : black;
+      /*background: #2A3F54;*/
+      font-family: "Helvetica Neue",Roboto,Arial,"Droid Sans",sans-serif;
+      /*font-size: 13px;*/
+      font-weight: 400;
+      line-height: 1.471;
+  }
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th, td {
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even){background-color: #f2f2f2}
+    a{
+      text-decoration: none;
+        margin :10px;
+    }
+
+
+</style>
+
 </head>
 <body>
-<div>
-  <H1>SUBJECT</H1>
+<div class="content">
 
-  <div class="left_col">
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/teacher">Teacher</a></li>
-      <li><a href="/subject">Subject</a></li>
-      <li><a href="/student">Student</a></li>
-      <!-- <li><a href="/contacts">Contact</a></li>
-      <li><a href="/addresses">Addresses</a></li> -->
-    </ul>
+  <div style="text-align:center; margin-bottom:35px;">
+    <H1 style="margin-bottom:13px;">SUBJECT</H1>
+    <a href="/">Home</a></li>
+    <a href="/teacher">Teacher</a>
+    <a href="/subject">Subject</a></li>
+    <a href="/students">Students</a></li>
   </div>
 
-  <table >
+
+    <table >
     <tr>
       <th>ID</th>
       <th>SUBJECT NAME</th>
@@ -35,8 +77,6 @@
       <td><%= data_SubjectToEjs[data].subject_name %></td>
       <td><%= data_SubjectToEjs[data].createdAt %></td>
       <td><%= data_SubjectToEjs[data].updatedAt %></td>
-
-
     </tr>
       <%}%>
   </table>

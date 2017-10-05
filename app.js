@@ -23,7 +23,7 @@ const student = require('./routers/student')
 app.use('/', index)
 app.use('/teacher', teacher)
 app.use('/subject', subject)
-app.use('/student', student)
+app.use('/students', student)
 
 
 app.listen('3333',()=>{
