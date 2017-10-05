@@ -18,10 +18,12 @@ app.use(express.static(__dirname+'/views'))
 const index = require('./routers/index')
 const teacher = require('./routers/teacher')
 const subject = require('./routers/subject')
+const student = require('./routers/student')
 
 app.use('/', index)
 app.use('/teacher', teacher)
 app.use('/subject', subject)
+app.use('/student', student)
 
 
 app.listen('3333',()=>{

@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>TEACHER</title>
+  <title>STUDENT</title>
 </head>
 <body>
 <div>
-  <H1>TEACHER</H1>
+  <H1>STUDENT</H1>
 
   <div class="left_col">
     <ul>
@@ -16,8 +16,7 @@
       <li><a href="/teacher">Teacher</a></li>
       <li><a href="/subject">Subject</a></li>
       <li><a href="/student">Student</a></li>
-      <!-- <li><a href="/contacts">Contact</a></li>
-      <li><a href="/addresses">Addresses</a></li> -->
+      <!-- <li><a href="/addresses">Addresses</a></li> -->
     </ul>
   </div>
 
@@ -31,16 +30,15 @@
       <th>EMAIL</th>
 
     </tr>
-      <% for(let data=0; data<data_TeachersToEjs.length; data++) {%>
-    <tr>
-      <td><%= data_TeachersToEjs[data].id %></td>
-      <td><%= data_TeachersToEjs[data].first_name %></td>
-      <td><%= data_TeachersToEjs[data].last_name %></td>
-      <td><%= data_TeachersToEjs[data].createdAt %></td>
-      <td><%= data_TeachersToEjs[data].updatedAt %></td>
-      <td><%= data_TeachersToEjs[data].email %></td>
-
-    </tr>
+      <% for(let data=0; data<data_StudentsToEjs.length; data++) {%>
+        <tr>
+          <td><%= data_StudentsToEjs[data].id %></td>
+          <td><%= data_StudentsToEjs[data].first_name %></td>
+          <td><%= data_StudentsToEjs[data].last_name %></td>
+          <td><%= data_StudentsToEjs[data].createdAt %></td>
+          <td><%= data_StudentsToEjs[data].updatedAt %></td>
+          <td><%= data_StudentsToEjs[data].email %></td>
+        </tr>
       <%}%>
   </table>
 
