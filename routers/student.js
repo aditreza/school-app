@@ -23,19 +23,45 @@ router.get('/add', function(req,res){
 })
 
 // add post
-// router.post('/add', (req, res) => {
-//     const id         = req.params.id
-//     const first_name = req.body.first_name
-//     const last_name = req.body.last_name
-//     model.Student.create({
-//       id : id,
-//       first_name: first_name,
-//       last_name: last_name
-//     })
-//       .then(data_Students => {
-//         res.redirect('students');
-//       })
-// })
+router.post('/add', (req, res) => {
+    //const id         = req.params.id
+    const first_name = req.body.first_name
+    const last_name = req.body.last_name
+    const email = req.body.email
+    model.Student.create({
+      // id : id,
+      first_name: first_name,
+      last_name: last_name,
+      email: email
+    })
+      .then(function (data_Students){
+        res.redirect('../../students');
+      })
+})
+
+// update get
+router.get('/edit/:id', (req,res)=>{
+  model.Student.findAll().then(data_Students =>{
+    res.render('student-edit', {data_StudentsToEjs:data_Students})
+  })
+})
+
+// update post
+router.post('/edit/:id', (req,res)=>{
+  //const id         = req.params.id
+  const first_name = req.body.first_name
+  const last_name = req.body.last_name
+  const email = req.body.email
+  model.Student.create({
+    // id : id,
+    first_name: first_name,
+    last_name: last_name,
+    email: email
+  })
+    .then(function (data_Students){
+      res.redirect('../../students');
+    })
+})
 
 // delete
 router.get('/delete/:id', function(req, res) {

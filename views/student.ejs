@@ -78,7 +78,7 @@
           <td><%= data_StudentsToEjs[data].first_name %></td>
           <td><%= data_StudentsToEjs[data].last_name %></td>
           <td><%= data_StudentsToEjs[data].email %></td>
-          <td style="margin-left:-5px;"><a style="text-decoration: none;" href='#'>Edit</a> <a>|</a> <a style="text-decoration: none;" href="students/delete/<%=data_StudentsToEjs[data].id%>">Delete</a></td>
+          <td style="margin-left:-5px;"><a style="text-decoration: none;" href='students/edit/<%=data_StudentsToEjs[data].id%>'>Edit</a> <a>|</a> <a style="text-decoration: none;" href="students/delete/<%=data_StudentsToEjs[data].id%>">Delete</a></td>
 
         </tr>
       <%}%>

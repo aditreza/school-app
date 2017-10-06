@@ -39,10 +39,10 @@
 
   <div style="margin:auto; width: 50%;">
     <div style="margin-top: 10%;">
-      <form action="/students/add" method="post">
-      First Name: <input type="text" name="first_name" value=""><br>
-      Last Name: <input type="text" name="last_name" value=""><br>
-      E-mail: <input type="text" name="email" value=""><br>
+      <form action="/students/edit/<%= data_StudentsToEjs[0].id %>" method="post">
+      First Name: <input type="text" name="first_name" value="<%= data_StudentsToEjs[0].first_name %>"><br>
+      Last Name: <input type="text" name="last_name" value="<%= data_StudentsToEjs[0].last_name %>"><br>
+      E-mail: <input type="text" name="email" value="<%= data_StudentsToEjs[0].email %>"><br>
       <input type="submit" value="Submit">
     </form>
     </div>
