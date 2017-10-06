@@ -18,7 +18,7 @@ router.get('/add', function(req,res){
   model.Student.findAll().then(data_Students => {
   // projects will be an array of all Project instances
   // res.send(data_Students)
-  res.render('student-add', {data_StudentsToEjs:data_Students})
+  res.render('student-add', {data_StudentsToEjs:data_Students, pesanError:null})
   })
 })
 
@@ -36,6 +36,9 @@ router.post('/add', (req, res) => {
     })
       .then(function (data_Students){
         res.redirect('../../students');
+      }).catch((err)=>{
+        // res.send(err.errors[0].message)
+        res.render('student-add', { pesanError : 'The email you entered is invalid' })
       })
 })
 
