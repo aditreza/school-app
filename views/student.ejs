@@ -56,7 +56,7 @@
 <div class="content">
 
   <div style="text-align:center; margin-bottom:35px;">
-    <H1 style="margin-bottom:13px;">STUDENT</H1>
+    <H1 style="margin-bottom:13px;">All Students Data</H1>
     <a href="/">Home</a>
     <a href="/teacher">Teacher</a>
     <a href="/subject">Subject</a>
@@ -78,7 +78,7 @@
           <td><%= data_StudentsToEjs[data].first_name %></td>
           <td><%= data_StudentsToEjs[data].last_name %></td>
           <td><%= data_StudentsToEjs[data].email %></td>
-          <td style="margin-left:-5px;"><a style="text-decoration: none;" href='students/edit/<%=data_StudentsToEjs[data].id%>'>Edit</a> <a>|</a> <a style="text-decoration: none;" href="students/delete/<%=data_StudentsToEjs[data].id%>">Delete</a></td>
+          <td style="margin-left:-5px;"><a style="text-decoration: none;" href='students/edit/<%=data_StudentsToEjs[data].id%>'>Edit</a> <a>|</a> <a style="text-decoration: none;" href="students/delete/<%=data_StudentsToEjs[data].id%>" onclick="myFunction()">Delete</a></td>
 
         </tr>
       <%}%>
@@ -88,8 +88,12 @@
     <a href='/students/add'>add student</a>
   </div>
 
+  </div>
 
-
-</div>
+  <script>
+    function myFunction() {
+      confirm("Delete this Student ?");
+    }
+  </script>
 </body>
 </html>

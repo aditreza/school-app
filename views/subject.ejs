@@ -67,8 +67,8 @@
     <tr>
       <th>ID</th>
       <th>SUBJECT NAME</th>
-      <th>CREATE AT</th>
-      <th>UPDATE AT</th>
+      <th>TEACHER</th>
+      <th>OPTION</th>
 
     </tr>
       <% for(let data=0; data<data_SubjectToEjs.length; data++) {%>
@@ -76,12 +76,18 @@
       <td><%= data_SubjectToEjs[data].id %></td>
       <td><%= data_SubjectToEjs[data].subject_name %></td>
       <td><%= data_SubjectToEjs[data].createdAt %></td>
-      <td><%= data_SubjectToEjs[data].updatedAt %></td>
+      <!-- <td><%= data_SubjectToEjs[data].updatedAt %></td> -->
+      <td style="margin-left:-5px;"><a style="text-decoration: none;" href="subject/delete/<%=data_SubjectToEjs[data].id%>" onclick="myFunction()">Delete</a></td>
     </tr>
       <%}%>
   </table>
 
 
 </div>
+<script>
+  function myFunction() {
+    confirm("Delete this Teacher ?");
+  }
+</script>
 </body>
 </html>

@@ -55,7 +55,7 @@
 <div class="content">
 
   <div style="text-align:center; margin-bottom:35px;">
-    <H1 style="margin-bottom:13px;">TEACHER</H1>
+    <H1 style="margin-bottom:13px;">All Teachers Data</H1>
     <a href="/">Home</a></li>
     <a href="/teacher">Teacher</a>
     <a href="/subject">Subject</a></li>
@@ -67,9 +67,11 @@
       <th>ID</th>
       <th>FIRST NAME</th>
       <th>LAST NAME</th>
-      <th>CREATE AT</th>
+      <!-- <th>CREATE AT</th> -->
       <!-- <th>UPDATE AT</th> -->
       <th>EMAIL</th>
+      <th>SUBJECT</th>
+      <th>OPTIONS</th>
 
     </tr>
       <% for(let data=0; data<data_TeachersToEjs.length; data++) {%>
@@ -77,15 +79,31 @@
       <td><%= data_TeachersToEjs[data].id %></td>
       <td><%= data_TeachersToEjs[data].first_name %></td>
       <td><%= data_TeachersToEjs[data].last_name %></td>
-      <td><%= data_TeachersToEjs[data].createdAt %></td>
-      <!-- <td><%= data_TeachersToEjs[data].updatedAt %></td> -->
       <td><%= data_TeachersToEjs[data].email %></td>
+      <% let subject='' %>
+      <% if(data_TeacherToEjs.SubjectId){ %>
+      <% subject = data_SubjectToEjs.subject_name %>
+      <% } else { %>
+      <% subject='unassigned' %>
+      <% }%>
+      <td><%=subject%></td>
+      <td style="margin-left:-5px;"><a style="text-decoration: none;" href='teacher/edit/<%=data_TeachersToEjs[data].id%>'>Edit</a> <a>|</a> <a style="text-decoration: none;" href="teacher/delete/<%=data_TeachersToEjs[data].id%>" onclick="myFunction()">Delete</a></td>
 
     </tr>
       <%}%>
   </table>
 
+  <div style="text-align:center; margin-top:35px;">
+    <a href='/teacher/add'>add teacher</a>
+  </div>
+
 
 </div>
+
+<script>
+  function myFunction() {
+    confirm("Delete this Teacher ?");
+  }
+</script>
 </body>
 </html>

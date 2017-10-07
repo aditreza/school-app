@@ -38,21 +38,27 @@
 <body>
 
   <div style="margin:auto; width: 50%;">
-    <H1 style="text-align: center;">ADD STUDENT</H1>
-    <h4 style="color:red; text-decoration: none; font-weight:bold; text-align: center; margin-bottom:-22px;" href="#"><%=pesanError%></h4>
     <div style="margin-top: 10%;">
-      <form action="/students/add" method="post">
-      First Name: <input type="text" name="first_name" value=""><br>
-      Last Name: <input type="text" name="last_name" value=""><br>
-      E-mail: <input type="text" name="email" value=""><br>
+      <form action="/teacher/edit/<%= data_TeachersToEjs.id %>" method="post">
+      First Name: <input type="text" name="first_name" value="<%= data_TeachersToEjs.first_name %>"><br>
+      Last Name: <input type="text" name="last_name" value="<%= data_TeachersToEjs.last_name %>"><br>
+      E-mail: <input type="text" name="email" value="<%= data_TeachersToEjs.email %>"><br>
+
+      <label for="#">Subject:</label>
+      <select name="subject_name">
+        <% for(let i=0; i<data_SubjectToEjs.length; i++) {%>
+        <option value="<%=data_SubjectToEjs[i].id%>"><%=data_SubjectToEjs[i].subject_name%></option>
+        <%}%>
+      </select>
+
       <input type="submit" value="Submit">
     </form>
     </div>
+
     <div style="text-align: center;">
-      <a style="text-decoration: none;" href="/students">show all students</a>
+      <a style="text-decoration: none;" href="/teacher">back teacher</a>
     </div>
   </div>
-
 
 </body>
 </html>

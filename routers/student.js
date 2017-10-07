@@ -44,7 +44,7 @@ router.post('/add', (req, res) => {
 
 // update get
 router.get('/edit/:id', (req,res)=>{
-  model.Student.findAll().then(data_Students =>{
+  model.Student.findById(req.params.id).then(data_Students =>{
     res.render('student-edit', {data_StudentsToEjs:data_Students})
   })
 })
