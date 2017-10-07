@@ -55,7 +55,7 @@
 <div class="content">
 
   <div style="text-align:center; margin-bottom:35px;">
-    <H1 style="margin-bottom:13px;">SUBJECT</H1>
+    <H1 style="margin-bottom:13px;">All Subject Data</H1>
     <a href="/">Home</a></li>
     <a href="/teacher">Teacher</a>
     <a href="/subject">Subject</a></li>
@@ -68,17 +68,27 @@
       <th>ID</th>
       <th>SUBJECT NAME</th>
       <th>TEACHER</th>
-      <th>OPTION</th>
+      <!-- <th>OPTION</th> -->
 
     </tr>
-      <% for(let data=0; data<data_SubjectToEjs.length; data++) {%>
+      <% for(let data=0; data<data_SubjectToEjs.length; data++){%>
+
     <tr>
       <td><%= data_SubjectToEjs[data].id %></td>
       <td><%= data_SubjectToEjs[data].subject_name %></td>
-      <td><%= data_SubjectToEjs[data].createdAt %></td>
+      <td>
+        <ol>
+      <% for(let i=0; i<data_SubjectToEjs[data].Teachers.length; i++){%>
+        <li>
+        <%= data_SubjectToEjs[data].Teachers[i].first_name %>
+        </li>
+      <%}%>
+        </ol>
+      </td>
       <!-- <td><%= data_SubjectToEjs[data].updatedAt %></td> -->
-      <td style="margin-left:-5px;"><a style="text-decoration: none;" href="subject/delete/<%=data_SubjectToEjs[data].id%>" onclick="myFunction()">Delete</a></td>
+      <!-- <td style="margin-left:-5px;"><a style="text-decoration: none;" href="subject/delete/<%=data_SubjectToEjs[data].id%>" onclick="myFunction()">Delete</a></td> -->
     </tr>
+
       <%}%>
   </table>
 

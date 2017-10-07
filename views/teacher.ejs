@@ -80,12 +80,12 @@
       <td><%= data_TeachersToEjs[data].first_name %></td>
       <td><%= data_TeachersToEjs[data].last_name %></td>
       <td><%= data_TeachersToEjs[data].email %></td>
-      <% let subject='' %>
-      <% if(data_TeacherToEjs.SubjectId){ %>
-      <% subject = data_SubjectToEjs.subject_name %>
-      <% } else { %>
-      <% subject='unassigned' %>
-      <% }%>
+      <%let subject=''
+      if(data_TeachersToEjs[data].Subject){
+        subject= data_TeachersToEjs[data].Subject.subject_name
+      } else {
+        subject='unassigned'
+      }%>
       <td><%=subject%></td>
       <td style="margin-left:-5px;"><a style="text-decoration: none;" href='teacher/edit/<%=data_TeachersToEjs[data].id%>'>Edit</a> <a>|</a> <a style="text-decoration: none;" href="teacher/delete/<%=data_TeachersToEjs[data].id%>" onclick="myFunction()">Delete</a></td>
 

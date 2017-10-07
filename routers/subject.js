@@ -6,7 +6,7 @@ const model = require('../models')
 // get data
 router.get('/',(req,res)=>{
   // res.render('teacher')
-  model.Subject.findAll().then(data_Subject => {
+  model.Subject.findAll({include : [model.Teacher]}).then(data_Subject => {
   // projects will be an array of all Project instances
   // res.send(data_Subject)
   res.render('subject', {data_SubjectToEjs:data_Subject})
