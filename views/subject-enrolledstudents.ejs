@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../../assets/style/bulma.min.css" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../../assets/style/custom.css" type="text/css">
+  <title><%=title%></title>
+</head>
+<body>
+ <div class="content"><% include assets/partials/menu-bar %></div> 
+<div  class="content">
+<div class="left_col">
+  <% include assets/partials/panel %>
+</div>
+
+<div class="right_col">
+  
+
+  <div style="a:2px; text-align:left; margin-bottom:25px;">
+    <H1 style="margin-bottom:13px;">All Students Data</H1>
+    <% include assets/partials/menu %>
+  </div>
+
+  <table class="table is-striped">
+    <tr>
+      <th><abbr title="Position">NO</abbr></th>
+      <th>STUDENT NAME</th>
+      <th>SCORE</th>
+      <th>DESC</th>
+
+    </tr>
+      <% for(let data=0; data<data_StudentSubjectjs.length; data++) {%>
+        <tr>
+          <th><%= data_StudentSubjectjs[data].SubjectId %></th>
+          <td><%= data_StudentSubjectjs[data].Student.first_name %>  <%=data_StudentSubjectjs[data].Student.last_name %></td>
+          <td></td>
+          <td style="color:#00d1b2;"></td>
+          
+          
+        </tr>
+      <%}%>
+  </table>
+
+  <!-- <div style="text-align:left; margin-top:35px;">
+    <a class="button is-outlined" href='/students/add'>add student</a>
+  </div> -->
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>

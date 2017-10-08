@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../../assets/style/bulma.min.css" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../../assets/style/custom.css" type="text/css">
+  <title><%=title%></title>
+</head>
+<body>
+
+  <div style="margin:auto; width: 50%;">
+      <!-- <label style="text-align: center;" class="label is-medium">Add Student</label> -->
+      <div style="text-align: center; margin-top:22px;">
+        <p class="title is-2">Edit Subject</p>
+        <p class="subtitle is-5">update my subject</p>
+      </div>
+
+      
+      <div style="margin-top: 8%;">
+
+      <form action="/subject/edit/<%= data_SubjectsToEjs.id %>" method="post">
+        
+        <div class="field">
+          <div class="control has-icons-left has-icons-right">
+            <input class="input is-medium" type="text" placeholder="Subject Name" name="subject_name" value="<%= data_SubjectsToEjs.subject_name%>">
+            <span class="icon is-small is-left">
+              <i class="fa fa-user"></i>
+            </span>
+          </div>
+        </div>
+        
+        <div style="text-align: center; margin-top:33px;"class="control">
+          <!-- <button type="submit" value="Submit" class="button is-primary">Submit</button> -->
+          <input class="button is-success is-outlined is-medium" type="submit" value="Submit input">
+          <input class="button is-success is-outlined is-medium" type="reset" value="Reset input">
+        </div>
+      </form>
+
+    </div>
+
+      <div style="text-align: center; margin-top:5%;">
+        <a style="text-decoration: none;" href="/subject">show all subject</a>
+      </div>
+  </div>
+
+</body>
+</html>

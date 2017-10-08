@@ -30,7 +30,8 @@
       <th>ID</th>
       <th>SUBJECT NAME</th>
       <th>TEACHER</th>
-      <!-- <th>OPTION</th> -->
+      <th>STUDENTS</th>
+      <th>ACTIONS</th>
 
     </tr>
       <% for(let data=0; data<data_SubjectToEjs.length; data++){%>
@@ -47,19 +48,44 @@
       <%}%>
         </ol>
       </th>
+      <td>
+        <a class="button is-success is-outlined is-small" href='subject/<%=data_SubjectToEjs[data].id%>/enrolledstudents'>
+            <span class="icon is-small">
+              <i class="fa fa-list-alt"></i>
+            </span>
+          <span>Enrolled Students</span>
+        </a>
+      </td>
+      <td style="margin-left:-5px;">
+            <a class="button is-info is-outlined is-small" href='subject/edit/<%=data_SubjectToEjs[data].id%>'>
+              <span class="icon is-small">
+                <i class="fa fa-pencil"></i>
+              </span>
+              <span>Edit</span>
+            </a>
+            <a onclick="myFunction()" class="button is-danger is-outlined is-small" href="subject/delete/<%=data_SubjectToEjs[data].id%>" >
+              <span class="icon is-small">
+                <i class="fa fa-times"></i>
+              </span>
+              <span>Delete</span>
+            </a>
+      </td>
       <!-- <td><%= data_SubjectToEjs[data].updatedAt %></td> -->
       <!-- <td style="margin-left:-5px;"><a style="text-decoration: none;" href="subject/delete/<%=data_SubjectToEjs[data].id%>" onclick="myFunction()">Delete</a></td> -->
     </tr>
       <%}%>
   </table>
 
+<div style="text-align:left; margin-top:35px;">
+    <a class="button is-outlined" href='/subject/add'>add subject</a>
+  </div>
 
 </div>
 
 </div>
 <script>
   function myFunction() {
-    confirm("Delete this Teacher ?");
+    confirm("Delete this Subject ?");
   }
 </script>
 </body>
