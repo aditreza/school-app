@@ -72,10 +72,11 @@ router.post('/edit/:id',(req,res)=>{
 
 router.get('/:id/enrolledstudents', (req, res) =>{
   model.StudentSubject.findAll({
-    include : [model.Subject, model.Student]
+    include : [model.Subject, model.Student],
+    where : {SubjectId : req.params.id}
   }).then(data_StudentSubject => {
     // res.send(data_StudentSubject)
-    res.render('subject-enrolledstudents', {title: 'Student Enrolled', data_StudentSubjectjs:data_StudentSubject })
+    res.render('subject-enrolledstudents', {title:'Student Enrolled',data_StudentSubjectjs:data_StudentSubject })
   })
 })
 

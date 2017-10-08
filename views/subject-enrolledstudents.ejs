@@ -20,7 +20,9 @@
   
 
   <div style="a:2px; text-align:left; margin-bottom:25px;">
-    <H1 style="margin-bottom:13px;">All Students Data</H1>
+   
+    <H1 style="margin-bottom:13px;">Enrolled <%=data_StudentSubjectjs[0].Subject.subject_name%> Subject Data</H1>
+
     <% include assets/partials/menu %>
   </div>
 
@@ -34,6 +36,7 @@
     </tr>
       <% for(let data=0; data<data_StudentSubjectjs.length; data++) {%>
         <tr>
+          
           <th><%= data_StudentSubjectjs[data].SubjectId %></th>
           <td><%= data_StudentSubjectjs[data].Student.first_name %>  <%=data_StudentSubjectjs[data].Student.last_name %></td>
           <td></td>
@@ -44,9 +47,9 @@
       <%}%>
   </table>
 
-  <!-- <div style="text-align:left; margin-top:35px;">
-    <a class="button is-outlined" href='/students/add'>add student</a>
-  </div> -->
+  <div style="text-align:center; margin-top:35px;">
+    <a class="button is-outlined is-small" href='/subject'>back subject</a>
+  </div>
 
 </div>
 
