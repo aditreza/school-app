@@ -5,14 +5,32 @@
 
 .content {
   background-color: white;
-  width: 1080px;
-  min-height: 700px;
+  width: 1280px;
+  /*min-height: 700px;*/
   margin: 0 auto 0 auto;
-  padding-top:160px;
+  /*padding-top:160px;*/
 }
 
 
 a{
   text-decoration: none;
   margin :5px;
+}
+
+.left_col{
+    /* background-color: red; */
+    /* min-height: 100%; */
+    width: 260px;
+    padding: 15px;
+    position: absolute;
+    display: -ms-flexbox;
+    display: flex; 
+    z-index: 1;
+    border: 1px solid #e8e8e8;
+}
+
+.right_col{
+  /*padding: 10px 20px 0;*/
+  margin-left: 300px;
+  /*background: #F7F7F7;*/
 }

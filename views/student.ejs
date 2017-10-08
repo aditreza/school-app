@@ -7,11 +7,17 @@
   <link rel="stylesheet" href="assets/style/bulma.min.css" type="text/css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="assets/style/custom.css" type="text/css">
-  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <title>STUDENTS</title>
+  <title><%=title%></title>
 </head>
 <body>
-<div class="content">
+ <div class="content"><% include assets/partials/menu-bar %></div> 
+<div  class="content">
+<div class="left_col">
+  <% include assets/partials/panel %>
+</div>
+
+<div class="right_col">
+  
 
   <div style="a:2px; text-align:left; margin-bottom:25px;">
     <H1 style="margin-bottom:13px;">All Students Data</H1>
@@ -76,5 +82,11 @@ function myFunction() {
     });
 }
 </script>
+
+
+</div>
+
+</div>
+
 </body>
 </html>

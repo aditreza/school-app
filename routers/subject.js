@@ -9,7 +9,7 @@ router.get('/',(req,res)=>{
   model.Subject.findAll({include : [model.Teacher]}).then(data_Subject => {
   // projects will be an array of all Project instances
   // res.send(data_Subject)
-  res.render('subject', {data_SubjectToEjs:data_Subject})
+  res.render('subject', {title:'subject', data_SubjectToEjs:data_Subject})
   })
 })
 

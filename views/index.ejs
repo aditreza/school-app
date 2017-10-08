@@ -7,20 +7,27 @@
   <link rel="stylesheet" href="assets/style/bulma.min.css" type="text/css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="assets/style/custom.css" type="text/css">
-  <title>STUDENT</title>
+  <title><%=title%></title>
 </head>
 <body>
-<div class="content">
+ <div class="content"><% include assets/partials/menu-bar %></div> 
+<div  class="content">
+<div class="left_col">
+  <% include assets/partials/panel %>
+</div>
+
+<div class="right_col">
+  
 
   <div style="text-align:left; margin-bottom:25px;">
-    <H1 style="margin-bottom:13px;">All Index Data</H1>
+    <H1 style="margin-bottom:13px;">All Subject Data</H1>
     <% include assets/partials/menu %>
   </div>
 
 
-
-
+</div>
 
 </div>
+
 </body>
 </html>

@@ -4,7 +4,7 @@ const router = express.Router()
 
 // get data
 router.get('/',(req,res)=>{
-  res.render('index')
+  res.render('index', {title:'Index'})
 })
 
 

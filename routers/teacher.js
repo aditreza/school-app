@@ -8,7 +8,7 @@ router.get('/',(req,res)=>{
   // res.render('teacher')
   model.Teacher.findAll({include : [model.Subject]}).then(data_Teachers => {
     // res.send(data_Teachers)
-    res.render('teacher', {data_TeachersToEjs:data_Teachers})
+    res.render('teacher', {title:'Teacher',data_TeachersToEjs:data_Teachers})
     // model.Subject.findAll().then(data_Subject=>{
     // res.render('teacher', {data_TeachersToEjs:data_Teachers,data_SubjectToEjs:data_Subject})
     // })
@@ -21,7 +21,7 @@ router.get('/',(req,res)=>{
 router.get('/edit/:id', (req,res)=>{
   model.Teacher.findById(req.params.id).then(data_Teachers =>{
     model.Subject.findAll().then(data_Subject =>{
-      res.render('teacher-edit',{data_TeachersToEjs:data_Teachers, data_SubjectToEjs:data_Subject })
+      res.render('teacher-edit',{title:'Teacher Edit', data_TeachersToEjs:data_Teachers, data_SubjectToEjs:data_Subject })
     })
   })
 })
@@ -62,7 +62,7 @@ router.get('/add', function(req,res){
   model.Teacher.findAll().then(data_Teacher => {
   // projects will be an array of all Project instances
   // res.send(data_Students)
-  res.render('teacher-add', {data_TeachersToEjs:data_Teacher, pesanError:null})
+  res.render('teacher-add', {title:'Teacher Add', data_TeachersToEjs:data_Teacher, pesanError:null})
   })
 })
 
