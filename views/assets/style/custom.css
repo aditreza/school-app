@@ -1,0 +1,18 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.content {
+  background-color: white;
+  width: 1080px;
+  min-height: 700px;
+  margin: 0 auto 0 auto;
+  padding-top:160px;
+}
+
+
+a{
+  text-decoration: none;
+  margin :5px;
+}

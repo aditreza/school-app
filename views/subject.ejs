@@ -4,66 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="assets/style/bulma.min.css" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/style/custom.css" type="text/css">
   <title>STUDENT</title>
-
-  <style>
-
-  * {
-    margin: 0px;
-    padding: 0px;
-    }
-
-  .content {
-      background-color: white;
-      width: 1080px;
-      min-height: 700px;
-      /*border:1px solid red;*/
-      margin: 0 auto 0 auto;
-      padding-top:160px;
-  }
-
-  body {
-      /*color: #73879C;*/
-      color : black;
-      /*background: #2A3F54;*/
-      font-family: "Helvetica Neue",Roboto,Arial,"Droid Sans",sans-serif;
-      /*font-size: 13px;*/
-      font-weight: 400;
-      line-height: 1.471;
-  }
-    table {
-        border-collapse: collapse;
-        width: 100%;
-    }
-
-    th, td {
-        text-align: left;
-        padding: 8px;
-    }
-
-    tr:nth-child(even){background-color: #f2f2f2}
-    a{
-      text-decoration: none;
-        margin :10px;
-    }
-
-
-</style>
-
 </head>
 <body>
 <div class="content">
 
-  <div style="text-align:center; margin-bottom:35px;">
+  <div style="text-align:left; margin-bottom:25px;">
     <H1 style="margin-bottom:13px;">All Subject Data</H1>
-    <a href="/">Home</a></li>
-    <a href="/teacher">Teacher</a>
-    <a href="/subject">Subject</a></li>
-    <a href="/students">Students</a></li>
+    <% include assets/partials/menu %>
   </div>
 
 
-    <table >
+    <table class="table is-striped">
     <tr>
       <th>ID</th>
       <th>SUBJECT NAME</th>
@@ -74,9 +29,9 @@
       <% for(let data=0; data<data_SubjectToEjs.length; data++){%>
 
     <tr>
-      <td><%= data_SubjectToEjs[data].id %></td>
+      <th><%= data_SubjectToEjs[data].id %></th>
       <td><%= data_SubjectToEjs[data].subject_name %></td>
-      <td>
+      <th>
         <ol>
       <% for(let i=0; i<data_SubjectToEjs[data].Teachers.length; i++){%>
         <li>
@@ -84,11 +39,10 @@
         </li>
       <%}%>
         </ol>
-      </td>
+      </th>
       <!-- <td><%= data_SubjectToEjs[data].updatedAt %></td> -->
       <!-- <td style="margin-left:-5px;"><a style="text-decoration: none;" href="subject/delete/<%=data_SubjectToEjs[data].id%>" onclick="myFunction()">Delete</a></td> -->
     </tr>
-
       <%}%>
   </table>
 

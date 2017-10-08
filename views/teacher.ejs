@@ -4,62 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="assets/style/bulma.min.css" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/style/custom.css" type="text/css">
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <title>STUDENT</title>
-
-  <style>
-
-  * {
-    margin: 0px;
-    padding: 0px;
-    }
-
-  .content {
-      background-color: white;
-      width: 1080px;
-      min-height: 700px;
-      /*border:1px solid red;*/
-      margin: 0 auto 0 auto;
-      padding-top:160px;
-  }
-
-  body {
-      /*color: #73879C;*/
-      color : black;
-      /*background: #2A3F54;*/
-      font-family: "Helvetica Neue",Roboto,Arial,"Droid Sans",sans-serif;
-      /*font-size: 13px;*/
-      font-weight: 400;
-      line-height: 1.471;
-  }
-    table {
-        border-collapse: collapse;
-        width: 100%;
-    }
-
-    th, td {
-        text-align: left;
-        padding: 8px;
-    }
-
-    tr:nth-child(even){background-color: #f2f2f2}
-    a{
-      text-decoration: none;
-        margin :10px;
-    }
-
-
-</style>
 
 </head>
 <body>
 <div class="content">
 
-  <div style="text-align:center; margin-bottom:35px;">
-    <H1 style="margin-bottom:13px;">All Teachers Data</H1>
-    <a href="/">Home</a></li>
-    <a href="/teacher">Teacher</a>
-    <a href="/subject">Subject</a></li>
-    <a href="/students">Students</a></li>
+  <div style="text-align:left; margin-bottom:25px;">
+    <H1 style="margin-bottom:13px;">All Teacher Data</H1>
+    <% include assets/partials/menu %>
   </div>
 
   <table >
@@ -76,25 +33,39 @@
     </tr>
       <% for(let data=0; data<data_TeachersToEjs.length; data++) {%>
     <tr>
-      <td><%= data_TeachersToEjs[data].id %></td>
+      <th><%= data_TeachersToEjs[data].id %></th>
       <td><%= data_TeachersToEjs[data].first_name %></td>
       <td><%= data_TeachersToEjs[data].last_name %></td>
-      <td><%= data_TeachersToEjs[data].email %></td>
+      <td style="color:#00d1b2;"><%= data_TeachersToEjs[data].email %></td>
       <%let subject=''
       if(data_TeachersToEjs[data].Subject){
         subject= data_TeachersToEjs[data].Subject.subject_name
       } else {
         subject='unassigned'
       }%>
-      <td><%=subject%></td>
-      <td style="margin-left:-5px;"><a style="text-decoration: none;" href='teacher/edit/<%=data_TeachersToEjs[data].id%>'>Edit</a> <a>|</a> <a style="text-decoration: none;" href="teacher/delete/<%=data_TeachersToEjs[data].id%>" onclick="myFunction()">Delete</a></td>
+      <th><%=subject%></th>
+      <td style="margin-left:-5px;">
+            <a class="button is-info is-outlined is-small" href='teacher/edit/<%=data_TeachersToEjs[data].id%>'>
+              <span>Edit</span>
+              <span class="icon is-small">
+                <i class="fa fa-pencil"></i>
+              </span>
+            </a>
+            <a class="button is-danger is-outlined is-small" href="teacher/delete/<%=data_TeachersToEjs[data].id%>" onclick="myFunction()">
+              <span>Delete</span>
+              <span class="icon is-small">
+                <i class="fa fa-times"></i>
+              </span>
+            </a>
+          </td>
+      <!-- <td style="margin-left:-5px;"><a style="text-decoration: none;" href='teacher/edit/<%=data_TeachersToEjs[data].id%>'>Edit</a> <a>|</a> <a style="text-decoration: none;" href="teacher/delete/<%=data_TeachersToEjs[data].id%>" onclick="myFunction()">Delete</a></td> -->
 
     </tr>
       <%}%>
   </table>
 
-  <div style="text-align:center; margin-top:35px;">
-    <a href='/teacher/add'>add teacher</a>
+  <div style="text-align:left; margin-top:35px;">
+    <a class="button is-outlined" href='/teacher/add'>add teacher</a>
   </div>
 
 
@@ -102,8 +73,11 @@
 
 <script>
   function myFunction() {
-    confirm("Delete this Teacher ?");
-  }
+    confirm("are you sure?!");
+    swal({
+      icon: "success",
+    });
+}
 </script>
 </body>
 </html>
