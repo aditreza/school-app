@@ -24,6 +24,7 @@
       <th>FIRST NAME</th>
       <th>LAST NAME</th>
       <th>EMAIL</th>
+      <th>ACTION</th>
       <th>OPTIONS</th>
 
     </tr>
@@ -33,22 +34,29 @@
           <td><%= data_StudentsToEjs[data].first_name %></td>
           <td><%= data_StudentsToEjs[data].last_name %></td>
           <td style="color:#00d1b2;"><%= data_StudentsToEjs[data].email %></td>
+          <td>
+            <a class="button is-success is-outlined is-small" href='students/<%=data_StudentsToEjs[data].id%>/addsubject'>
+              <span class="icon is-small">
+                <i class="fa fa-book"></i>
+              </span>
+              <span>Add Subject</span>
+            </a>
+          </td>
           <td style="margin-left:-5px;">
             <a class="button is-info is-outlined is-small" href='students/edit/<%=data_StudentsToEjs[data].id%>'>
-              <span>Edit</span>
               <span class="icon is-small">
                 <i class="fa fa-pencil"></i>
               </span>
+              <span>Edit</span>
             </a>
             <a onclick="myFunction()" class="button is-danger is-outlined is-small" href="students/delete/<%=data_StudentsToEjs[data].id%>" >
-              <span>Delete</span>
               <span class="icon is-small">
                 <i class="fa fa-times"></i>
               </span>
+              <span>Delete</span>
             </a>
           </td>
           <!-- <td style="margin-left:-5px;"><a style="text-decoration: none;" href='students/edit/<%=data_StudentsToEjs[data].id%>'>Edit</a> <a>|</a> <a style="text-decoration: none;" href="students/delete/<%=data_StudentsToEjs[data].id%>" onclick="myFunction()">Delete</a></td> -->
-
         </tr>
       <%}%>
   </table>
