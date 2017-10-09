@@ -3,10 +3,6 @@
   "version": "1.0.0",
   "description": "a really cool app",
   "main": "app.js",
-  "engines": {
-    "node": "6.11.3",
-    "npm" : "3.10.10"
-  },
   "scripts": {
     "start": "node.app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -29,5 +25,9 @@
     "pg": "^7.3.0",
     "sequelize": "^4.13.5",
     "sweetalert": "^2.0.5"
+  },
+  "engines": {
+    "node": "6.11.3",
+    "npm" : "3.10.10"
   }
 }
