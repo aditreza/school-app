@@ -26,8 +26,14 @@
 
 
       <div style="a:2px; text-align:left; margin-bottom:25px;">
+        <% enroll = ''
+        if(data_StudentSubjectjs[0].Subject.subject_name){
+        enroll = data_StudentSubjectjs[0].Subject.subject_name
+        }else{
+        enroll = "Masih Kosong di"
+        }%>
         
-        <H1 style="margin-bottom:13px;">Enrolled <%=data_StudentSubjectjs[0].Subject.subject_name%> Subject Data</H1>
+        <H1 style="margin-bottom:13px;">Enrolled <%=enroll%> Subject Data</H1>
         <% include assets/partials/menu %>
       </div>
 
@@ -41,13 +47,19 @@
         <% for(let data=0; data<data_StudentSubjectjs.length; data++) {%>
           <tr>
             <th>
-              <%= data_StudentSubjectjs[data].SubjectId %>
+              <%=[data+1]%>
             </th>
             <td>
               <%= data_StudentSubjectjs[data].Student.first_name %>
                 <%=data_StudentSubjectjs[data].Student.last_name %>
             </td>
-            <td></td>
+            
+            <% if (data_StudentSubjectjs[data].score){ %>
+                <td><%=data_StudentSubjectjs[data].score%></td>
+            <% }else{ %>
+              <td><a href="#">Give Score</a></td>
+            <%}%>
+            
             <td style="color:#00d1b2;"></td>
           </tr>
           <%}%>

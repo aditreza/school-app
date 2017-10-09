@@ -1,6 +1,7 @@
 const	express = require('express')
 const	router = express.Router()
 const model = require('../models')
+const crypto = require('crypto')
 
 // GET data
 router.get('/', (req,res)=>{

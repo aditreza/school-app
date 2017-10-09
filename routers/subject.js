@@ -101,10 +101,25 @@ router.get('/:id/enrolledstudents', (req, res) => {
     // res.send(data_StudentSubject)
     res.render('subject-enrolledstudents', {
       title: 'Student Enrolled - School App',
-      data_StudentSubjectjs: data_StudentSubject
+      data_StudentSubjectjs: data_StudentSubject,
+      session: req.session
     })
   })
 })
+
+//get givescore
+// router.get('/:id/givescore', (req,res)=>{
+//     model.StudentSubject.findAll({
+//     include: [model.Subject, model.Student],
+//     where: {
+//       StudentId: req.params.id
+//     }
+//   }).then(data_StudentSubjects =>{
+//       // console.log(data_StudentSubjects)
+//       res.send(data_StudentSubjects)
+//       res.render('givescore',{title:'Give Score - School App', data_SS:data_StudentSubjects, session: req.session})
+//     }) 
+// })
 
 
 

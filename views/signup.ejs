@@ -29,7 +29,7 @@
 							<div class="field">
 								<label class="label">Username</label>
 								<div class="control has-icons-left has-icons-right">
-									<input class="input is-primary" type="text" placeholder="username" name="your_user_name">
+									<input class="input is-primary" type="text" placeholder="username" name="signup_user_name">
 									<span class="icon is-small is-left">
 							      <i class="fa fa-user"></i>
 							    </span>
@@ -44,7 +44,7 @@
 							<div class="field">
 								<label class="label">Password</label>
 							  <p class="control has-icons-left">
-							    <input class="input" type="password" placeholder="Password" name="your_password">
+							    <input class="input" type="password" placeholder="Password" name="signup_password">
 							    <span class="icon is-small is-left">
 							      <i class="fa fa-lock"></i>
 							    </span>
@@ -56,9 +56,12 @@
 							  <label class="label">Role</label>
 							  <div class="control">
 							    <div class="select is-fullwidth">
-							      <select>
-							        <option>Select dropdown</option>
-							        <option>With options</option>
+							      <select name="signup_role">
+							       
+							        <option value="teacher">teacher</option>
+							         <option value="academic">academic</option>
+							        <option value="headmaster">headmaster</option>
+							       
 							      </select>
 							    </div>
 							  </div>
@@ -74,7 +77,7 @@
                 </button>
 							</p>
 
-							<p style="text-align: center; font-size:13px;">Already account go <a href="/login">Login</a></p>
+							<p style="text-align: center; font-size:13px;">Already account go<a href="/login">Login</a></p>
 
 						</form>
 
