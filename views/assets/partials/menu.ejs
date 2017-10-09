@@ -1,5 +1,19 @@
 
-    <a style="margin: 1px;" class="button is-primary is-small" href="/">Home</a>
-    <a style="margin: 1px;" class="button is-info is-small" href="/teacher">Teacher</a>
-    <a style="margin: 1px;" class="button is-success is-small" href="/subject">Subject</a>
-    <a style="margin: 1px;" class="button is-warning is-small" href="/students">Students</a>
+    <%if(session.hasOwnProperty('role')){%>
+    <% if(session.role === 'teacher'){%>
+      <a style="margin: 1px;" class="button is-primary is-small" href="/">Home</a>
+        <a style="margin: 1px;" class="button is-warning is-small" href="/students">Students</a>
+
+    <%}else if(session.role === 'academic'){%>
+      <a style="margin: 1px;" class="button is-primary is-small" href="/">Home</a>
+      <a style="margin: 1px;" class="button is-success is-small" href="/subject">Subject</a>
+      <a style="margin: 1px;" class="button is-warning is-small" href="/students">Students</a>
+
+    <%}else if(session.role === 'headmaster'){%>
+      <a style="margin: 1px;" class="button is-primary is-small" href="/">Home</a>
+      <a style="margin: 1px;" class="button is-info is-small" href="/teacher">Teacher</a>
+      <a style="margin: 1px;" class="button is-success is-small" href="/subject">Subject</a>
+      <a style="margin: 1px;" class="button is-warning is-small" href="/students">Students</a>
+
+    <%}%>
+    <%}%>

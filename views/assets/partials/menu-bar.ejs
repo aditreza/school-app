@@ -21,7 +21,10 @@
       <span></span>
       <span></span>
     </div>
-  </div>
+</div>
+
+<%if(session.hasOwnProperty('role')){%>
+<% if(session.role === 'teacher'){%>
 
   <!--HOME-->
   <div id="navMenuTransparentExample" class="navbar-menu">
@@ -30,110 +33,214 @@
         <a class="navbar-link  is-active" href="/">
           Home
         </a>
-
       </div>
-
-
     </div>
 
-    <!--TEACHER-->
+            <!--STUDENTS-->
+            <div id="navMenuTransparentExample" class="navbar-menu">
+              <div class="navbar-start">
+                <div class="navbar-item has-dropdown is-hoverable">
+                  <a class="navbar-link  is-active" href="/students">
+                    Students
+                  </a>
+                  <div class="navbar-dropdown is-boxed">
+                    <a class="navbar-item is-active" href="/students">
+                        All Data Student
+                    </a>
+                    <a class="navbar-item " href="/students">
+                      Add Subject
+                    </a>
+                    <a class="navbar-item " href="/students">
+                      Delete Student
+                    </a>
+                    <hr class="navbar-divider">
+                    <div class="navbar-item">
+                      <div>
+                        <p class="is-size-6-desktop">
+                          <strong class="has-text-info">Add Data Student</strong>
+                        </p>
+                        <small>
+                          <a class="bd-view-all-versions" href="/students/add">Input Data</a>
+                        </small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+<%}else if(session.role === 'academic'){%>
+
+
+
+    <!--HOME-->
     <div id="navMenuTransparentExample" class="navbar-menu">
       <div class="navbar-start">
         <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link  is-active" href="/teacher">
-          Teacher
-        </a>
-          <div class="navbar-dropdown is-boxed">
-            <a class="navbar-item is-active" href="http:/teacher">
-              All Data Student
+          <a class="navbar-link  is-active" href="/">
+            Home
           </a>
-            <a class="navbar-item " href="/teacher">
-            Add Subject
-          </a>
-            <a class="navbar-item " href="/teacher">
-            Delete Student
-          </a>
-
-            <hr class="navbar-divider">
-            <div class="navbar-item">
-              <div>
-                <p class="is-size-6-desktop">
-                  <strong class="has-text-info">Add Data Techer</strong>
-                </p>
-
-                <small>
-                  <a class="bd-view-all-versions" href="/teacher/add">Input Data</a>
-                </small>
-
-              </div>
-            </div>
-          </div>
         </div>
       </div>
-
 
       <!--SUBJECT-->
       <div id="navMenuTransparentExample" class="navbar-menu">
         <div class="navbar-start">
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link  is-active" href="/subject">
-          Subject
-        </a>
+            Subject
+            </a>
             <div class="navbar-dropdown is-boxed">
               <a class="navbar-item is-active" href="/students">
               Enrolled Student
-          </a>
-
+              </a>
             </div>
-
-
           </div>
-
-
         </div>
 
-
-        <!--STUDENTS-->
-        <div id="navMenuTransparentExample" class="navbar-menu">
-          <div class="navbar-start">
-            <div class="navbar-item has-dropdown is-hoverable">
-              <a class="navbar-link  is-active" href="/students">
-          Students
-        </a>
-              <div class="navbar-dropdown is-boxed">
-                <a class="navbar-item is-active" href="/students">
-              All Data Student
-          </a>
-                <a class="navbar-item " href="/students">
-            Add Subject
-          </a>
-                <a class="navbar-item " href="/students">
-            Delete Student
-          </a>
-
-                <hr class="navbar-divider">
-                <div class="navbar-item">
-                  <div>
-                    <p class="is-size-6-desktop">
-                      <strong class="has-text-info">Add Data Student</strong>
-                    </p>
-
-                    <small>
-                  <a class="bd-view-all-versions" href="/students/add">Input Data</a>
-                </small>
-
+              <!--STUDENTS-->
+              <div id="navMenuTransparentExample" class="navbar-menu">
+                <div class="navbar-start">
+                  <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link  is-active" href="/students">
+                      Students
+                    </a>
+                    <div class="navbar-dropdown is-boxed">
+                      <a class="navbar-item is-active" href="/students">
+                          All Data Student
+                      </a>
+                      <a class="navbar-item " href="/students">
+                        Add Subject
+                      </a>
+                      <a class="navbar-item " href="/students">
+                        Delete Student
+                      </a>
+                      <hr class="navbar-divider">
+                      <div class="navbar-item">
+                        <div>
+                          <p class="is-size-6-desktop">
+                            <strong class="has-text-info">Add Data Student</strong>
+                          </p>
+                          <small>
+                            <a class="bd-view-all-versions" href="/students/add">Input Data</a>
+                          </small>
+                        </div>
+                      </div>
+                    </div>
                   </div>
+                </div>
+                </div>
+
+
+
+
+
+<%}else if(session.role === 'headmaster'){%>
+
+
+    <!--HOME-->
+    <div id="navMenuTransparentExample" class="navbar-menu">
+      <div class="navbar-start">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link  is-active" href="/">
+            Home
+          </a>
+        </div>
+      </div>
+
+
+      <!--TEACHER-->
+      <div id="navMenuTransparentExample" class="navbar-menu">
+        <div class="navbar-start">
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link  is-active" href="/teacher">
+            Teacher
+          </a>
+            <div class="navbar-dropdown is-boxed">
+              <a class="navbar-item is-active" href="http:/teacher">
+                All Data Student
+            </a>
+              <a class="navbar-item " href="/teacher">
+              Add Subject
+            </a>
+              <a class="navbar-item " href="/teacher">
+              Delete Student
+            </a>
+              <hr class="navbar-divider">
+              <div class="navbar-item">
+                <div>
+                  <p class="is-size-6-desktop">
+                    <strong class="has-text-info">Add Data Techer</strong>
+                  </p>
+                  <small>
+                    <a class="bd-view-all-versions" href="/teacher/add">Input Data</a>
+                  </small>
                 </div>
               </div>
             </div>
           </div>
+        </div>
 
+
+        <!--SUBJECT-->
+        <div id="navMenuTransparentExample" class="navbar-menu">
+          <div class="navbar-start">
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link  is-active" href="/subject">
+              Subject
+              </a>
+              <div class="navbar-dropdown is-boxed">
+                <a class="navbar-item is-active" href="/students">
+                Enrolled Student
+                </a>
+              </div>
+            </div>
+          </div>
+
+                      <!--STUDENTS-->
+                      <div id="navMenuTransparentExample" class="navbar-menu">
+                        <div class="navbar-start">
+                          <div class="navbar-item has-dropdown is-hoverable">
+                            <a class="navbar-link  is-active" href="/students">
+                              Students
+                            </a>
+                            <div class="navbar-dropdown is-boxed">
+                              <a class="navbar-item is-active" href="/students">
+                                  All Data Student
+                              </a>
+                              <a class="navbar-item " href="/students">
+                                Add Subject
+                              </a>
+                              <a class="navbar-item " href="/students">
+                                Delete Student
+                              </a>
+                              <hr class="navbar-divider">
+                              <div class="navbar-item">
+                                <div>
+                                  <p class="is-size-6-desktop">
+                                    <strong class="has-text-info">Add Data Student</strong>
+                                  </p>
+                                  <small>
+                                    <a class="bd-view-all-versions" href="/students/add">Input Data</a>
+                                  </small>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        </div>
+
+  <%}%>
+<%}%>
+
+
+
+
+
+          <!--right col-->
           <div class="navbar-end">
-
             <div class="navbar-item">
               <div class="field is-grouped">
                 <p class="control">
-
                   <a class="nav-item is-tab">
                     <figure class="image is-16x16" style="margin-right: 8px;">
                       <img src="http://bulma.io/images/jgthms.png">
@@ -141,9 +248,8 @@
                     Profile
                   </a>
                   <a class="nav-item is-tab" href="/logout">Log out</a>
-
               </div>
             </div>
           </div>
-        </div>
+
 </nav>

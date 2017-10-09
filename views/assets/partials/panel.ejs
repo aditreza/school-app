@@ -1,51 +1,126 @@
-<aside class="menu">
 
-  <p class="menu-label">
-    HOME
-  </p>
-  <ul class="menu-list">
-    <li><a href="/">Dashboard</a></li>
-  </ul>
+<%if(session.hasOwnProperty('role')){%>
+<% if(session.role === 'teacher'){%>
 
-  <p class="menu-label">
-    THEACHER
-  </p>
-  <ul class="menu-list">
-    <li><a href="/teacher">All Data</a></li>
-    <li><a href="/teacher/add">Add a Teacher</a></li>
+  <aside class="menu">
 
-  </ul>
-
-  <p class="menu-label">
-    STUDENTS
-  </p>
-  <ul class="menu-list">
-    <li><a href="/students">All Data Students</a></li>
-    <li>
-      <a class="is-active">Manage Students</a>
-      <ul>
-        <li><a href="/students/add">Add a Student</a></li>
-        <li><a href="/students">Delete Student</a></li>
-      </ul>
-    </li>
-    <li><a>Add Subject Student</a></li>
-
-  </ul>
-
-  <p class="menu-label">
-    SUBJECT
-  </p>
-  <ul class="menu-list">
-    <li><a href="/subject">View Subject</a></li>
-
-  </ul>
-  <ul class="menu-list">
-    <li><a href="/subject/add">Add New Subject</a></li>
-
-  </ul>
+    <p class="menu-label">
+      HOME
+    </p>
+    <ul class="menu-list">
+      <li><a href="/">Dashboard</a></li>
+    </ul>
 
 
+    <p class="menu-label">
+      STUDENTS
+    </p>
+    <ul class="menu-list">
+      <li><a href="/students">All Data Students</a></li>
+      <li>
+        <a class="is-active">Manage Students</a>
+        <ul>
+          <li><a href="/students/add">Add a Student</a></li>
+          <li><a href="/students">Delete Student</a></li>
+        </ul>
+      </li>
+      <li><a>Add Subject Student</a></li>
+
+    </ul>
 
 
+  </aside>
 
-</aside>
+<%}else if(session.role === 'academic'){%>
+
+  <aside class="menu">
+
+    <p class="menu-label">
+      HOME
+    </p>
+    <ul class="menu-list">
+      <li><a href="/">Dashboard</a></li>
+    </ul>
+
+    <p class="menu-label">
+      STUDENTS
+    </p>
+    <ul class="menu-list">
+      <li><a href="/students">All Data Students</a></li>
+      <li>
+        <a class="is-active">Manage Students</a>
+        <ul>
+          <li><a href="/students/add">Add a Student</a></li>
+          <li><a href="/students">Delete Student</a></li>
+        </ul>
+      </li>
+      <li><a>Add Subject Student</a></li>
+
+    </ul>
+
+    <p class="menu-label">
+      SUBJECT
+    </p>
+    <ul class="menu-list">
+      <li><a href="/subject">View Subject</a></li>
+
+    </ul>
+    <ul class="menu-list">
+      <li><a href="/subject/add">Add New Subject</a></li>
+
+    </ul>
+
+  </aside>
+
+<%}else if(session.role === 'headmaster'){%>
+
+  <aside class="menu">
+
+    <p class="menu-label">
+      HOME
+    </p>
+    <ul class="menu-list">
+      <li><a href="/">Dashboard</a></li>
+    </ul>
+
+    <p class="menu-label">
+      THEACHER
+    </p>
+    <ul class="menu-list">
+      <li><a href="/teacher">All Data</a></li>
+      <li><a href="/teacher/add">Add a Teacher</a></li>
+
+    </ul>
+
+    <p class="menu-label">
+      STUDENTS
+    </p>
+    <ul class="menu-list">
+      <li><a href="/students">All Data Students</a></li>
+      <li>
+        <a class="is-active">Manage Students</a>
+        <ul>
+          <li><a href="/students/add">Add a Student</a></li>
+          <li><a href="/students">Delete Student</a></li>
+        </ul>
+      </li>
+      <li><a>Add Subject Student</a></li>
+
+    </ul>
+
+    <p class="menu-label">
+      SUBJECT
+    </p>
+    <ul class="menu-list">
+      <li><a href="/subject">View Subject</a></li>
+
+    </ul>
+    <ul class="menu-list">
+      <li><a href="/subject/add">Add New Subject</a></li>
+
+    </ul>
+
+  </aside>
+
+<%}%>
+<%}%>
