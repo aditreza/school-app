@@ -7,16 +7,16 @@
     "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
   },
-  // "repository": {
-  //   "type": "git",
-  //   "url": "git+https://github.com/aditreza/school-app.git",
-  // },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aditreza/school-app.git",
+  },
   "author": "",
   "license": "ISC",
-  // "bugs": {
-  //   "url": "https://github.com/aditreza/school-app/issues",
-  // },
-  // "homepage": "https://github.com/aditreza/school-app#readme",
+  "bugs": {
+    "url": "https://github.com/aditreza/school-app/issues",
+  },
+  "homepage": "https://github.com/aditreza/school-app#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
     "ejs": "^2.5.7",
