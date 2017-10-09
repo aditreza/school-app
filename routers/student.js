@@ -2,6 +2,15 @@ const express = require('express')
 const router = express.Router()
 const model = require('../models')
 
+router.use(function(req,res,next){
+  // console.log(req.session)
+  if(req.session && req.session.hasOwnProperty('username')){
+    next()
+  }else{
+    res.redirect('/login')
+  }
+})
+
 
 
 // get data
@@ -11,7 +20,8 @@ router.get('/', (req, res) => {
     // res.send(data_Students)
     res.render('student', {
       title: 'Student - School App',
-      data_StudentsToEjs: data_Students
+      data_StudentsToEjs: data_Students,
+      session: req.session
     })
   })
 })

@@ -2,6 +2,14 @@ const express = require('express')
 const router = express.Router()
 const model = require('../models')
 
+router.use(function(req,res,next){
+  // console.log(req.session)
+  if(req.session && req.session.hasOwnProperty('username')){
+    next()
+  }else{
+    res.redirect('/login')
+  }
+})
 
 // get data
 router.get('/', (req, res) => {
@@ -12,7 +20,8 @@ router.get('/', (req, res) => {
     // res.send(data_Teachers)
     res.render('teacher', {
       title: 'Teacher - School App',
-      data_TeachersToEjs: data_Teachers
+      data_TeachersToEjs: data_Teachers,
+      session: req.session
     })
     // model.Subject.findAll().then(data_Subject=>{
     // res.render('teacher', {data_TeachersToEjs:data_Teachers,data_SubjectToEjs:data_Subject})

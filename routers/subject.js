@@ -3,6 +3,15 @@ const router = express.Router()
 const model = require('../models')
 
 
+router.use(function(req,res,next){
+  // console.log(req.session)
+  if(req.session && req.session.hasOwnProperty('username')){
+    next()
+  }else{
+    res.redirect('/login')
+  }
+})
+
 // get data
 router.get('/', (req, res) => {
   // res.render('teacher')
@@ -13,7 +22,8 @@ router.get('/', (req, res) => {
     // res.send(data_Subject)
     res.render('subject', {
       title: 'subject - School App',
-      data_SubjectToEjs: data_Subject
+      data_SubjectToEjs: data_Subject,
+      session: req.session
     })
   })
 })
