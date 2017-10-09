@@ -22,11 +22,13 @@ const index = require('./routers/index')
 const teacher = require('./routers/teacher')
 const subject = require('./routers/subject')
 const student = require('./routers/student')
+const login = require('./routers/login')
 
 app.use('/', index)
 app.use('/teacher', teacher)
 app.use('/subject', subject)
 app.use('/students', student)
+app.use('/login', login)
 
 
 app.listen('3333',()=>{

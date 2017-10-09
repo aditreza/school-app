@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,19 +8,22 @@
   <link rel="stylesheet" href="../assets/style/bulma.min.css" type="text/css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="../assets/style/custom.css" type="text/css">
-  <title><%=title%></title>
+  <title>
+    <%=title%>
+  </title>
 </head>
+
 <body>
 
   <div style="margin:auto; width: 50%;">
-      <!-- <label style="text-align: center;" class="label is-medium">Add Student</label> -->
-      <div style="text-align: center; margin-top:22px;">
-        <p class="title is-2">Add Student</p>
-        <p class="subtitle is-5">input name and mail student</p>
-      </div>
+    <!-- <label style="text-align: center;" class="label is-medium">Add Student</label> -->
+    <div style="text-align: center; margin-top:22px;">
+      <p class="title is-2">Add Student</p>
+      <p class="subtitle is-5">input name and mail student</p>
+    </div>
 
-      <h4 style="color:red; text-decoration: none; font-weight:bold; text-align: center; margin-bottom:-22px;" href="#"><%=pesanError%></h4>
-      <div style="margin-top: 8%;">
+    <h4 style="color:red; text-decoration: none; font-weight:bold; text-align: center; margin-bottom:-22px;" href="#"><%=pesanError%></h4>
+    <div style="margin-top: 8%;">
 
       <form action="/students/add" method="post">
         <div class="field">
@@ -46,7 +50,7 @@
             </span>
           </div>
         </div>
-        <div style="text-align: center; margin-top:33px;"class="control">
+        <div style="text-align: center; margin-top:33px;" class="control">
           <!-- <button type="submit" value="Submit" class="button is-primary">Submit</button> -->
           <input class="button is-success is-outlined is-medium" type="submit" value="Submit input">
           <input class="button is-success is-outlined is-medium" type="reset" value="Reset input">
@@ -56,17 +60,18 @@
     </div>
 
 
-      <!-- <form action="/students/add" method="post">
+    <!-- <form action="/students/add" method="post">
         First Name: <input type="text" name="first_name" value=""><br>
         Last Name: <input type="text" name="last_name" value=""><br>
         E-mail: <input type="text" name="email" value=""><br>
         <input type="submit" value="Submit">
       </form> -->
 
-      <div style="text-align: center; margin-top:5%;">
-        <a style="text-decoration: none;" href="/students">show all students</a>
-      </div>
+    <div style="text-align: center; margin-top:5%;">
+      <a style="text-decoration: none;" href="/students">show all students</a>
+    </div>
   </div>
 
 </body>
+
 </html>

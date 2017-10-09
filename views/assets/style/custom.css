@@ -34,3 +34,9 @@ a{
   margin-left: 300px;
   /*background: #F7F7F7;*/
 }
+
+.containerCust{
+  max-width: 650px;
+  margin: auto;
+  width: 460px;
+}

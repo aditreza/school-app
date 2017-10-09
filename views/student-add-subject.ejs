@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,11 @@
   <link rel="stylesheet" href="../../assets/style/bulma.min.css" type="text/css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="../../assets/style/custom.css" type="text/css">
-  <title><%=title%></title>
+  <title>
+    <%=title%>
+  </title>
 </head>
+
 <body class="content">
 
   <div style="text-align: center; margin-top:22px;">
@@ -19,26 +23,34 @@
   <div style="margin:auto; width: 50%;">
     <div style="margin-top: 10%;">
 
-    
-    <table class="table is-striped">
-      <tr>
-        <th><abbr title="Position">ID</abbr></th>
-        <td><%= data_StudentsToEjs.id %></td>
-      </tr>
-      <tr>
-        <th><abbr title="Position">FIRST NAME</abbr></th>
-        <td><%= data_StudentsToEjs.first_name %></td>
-      </tr>
-      <tr>
-        <th><abbr title="Position">LAST NAME</abbr></th>
-        <td><%= data_StudentsToEjs.last_name %></td>
-      </tr>
-      <tr>
-        <th><abbr title="Position">EMAIL</abbr></th>
-        <td style="color:#00d1b2;"><%= data_StudentsToEjs.email %></td>
-      </tr>
-  </table>
-  
+
+      <table class="table is-striped">
+        <tr>
+          <th><abbr title="Position">ID</abbr></th>
+          <td>
+            <%= data_StudentsToEjs.id %>
+          </td>
+        </tr>
+        <tr>
+          <th><abbr title="Position">FIRST NAME</abbr></th>
+          <td>
+            <%= data_StudentsToEjs.first_name %>
+          </td>
+        </tr>
+        <tr>
+          <th><abbr title="Position">LAST NAME</abbr></th>
+          <td>
+            <%= data_StudentsToEjs.last_name %>
+          </td>
+        </tr>
+        <tr>
+          <th><abbr title="Position">EMAIL</abbr></th>
+          <td style="color:#00d1b2;">
+            <%= data_StudentsToEjs.email %>
+          </td>
+        </tr>
+      </table>
+
 
       <form action="#" method="post">
         <div style="margin-top: 6%;" class="field is-horizontal">
@@ -60,12 +72,12 @@
           </div>
         </div>
 
-        <div style="text-align: center; margin-top: 55px;" >
+        <div style="text-align: center; margin-top: 55px;">
           <input class="button is-success is-outlined is-medium" type="submit" value="Submit input">
         </div>
         <!-- <div style="text-align: center; margin-top:33px;"class="control"> -->
-          <!-- <button type="submit" value="Submit" class="button is-primary">Submit</button> -->
-          <!-- <input class="button is-success is-outlined is-medium" type="submit" value="Submit input">
+        <!-- <button type="submit" value="Submit" class="button is-primary">Submit</button> -->
+        <!-- <input class="button is-success is-outlined is-medium" type="submit" value="Submit input">
           <input class="button is-success is-outlined is-medium" type="reset" value="Reset input">
         </div> -->
       </form>
@@ -78,4 +90,5 @@
   </div>
 
 </body>
+
 </html>

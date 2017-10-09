@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,86 +8,96 @@
   <link rel="stylesheet" href="assets/style/bulma.min.css" type="text/css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="assets/style/custom.css" type="text/css">
-  <title><%=title%></title>
+  <title>
+    <%=title%>
+  </title>
 </head>
+
 <body>
- <div class="content"><% include assets/partials/menu-bar %></div> 
-<div  class="content">
-<div class="left_col">
-  <% include assets/partials/panel %>
-</div>
-
-<div class="right_col">
-  
-
-  <div style="text-align:left; margin-bottom:25px;">
-    <H1 style="margin-bottom:13px;">All Subject Data</H1>
-    <% include assets/partials/menu %>
+  <div class="content">
+    <% include assets/partials/menu-bar %>
   </div>
+  <div class="content">
+    <div class="left_col">
+      <% include assets/partials/panel %>
+    </div>
+
+    <div class="right_col">
 
 
-    <table class="table is-striped">
-    <tr>
-      <th>ID</th>
-      <th>SUBJECT NAME</th>
-      <th>TEACHER</th>
-      <th>STUDENTS</th>
-      <th>ACTIONS</th>
+      <div style="text-align:left; margin-bottom:25px;">
+        <H1 style="margin-bottom:13px;">All Subject Data</H1>
+        <% include assets/partials/menu %>
+      </div>
 
-    </tr>
-      <% for(let data=0; data<data_SubjectToEjs.length; data++){%>
 
-    <tr>
-      <th><%= data_SubjectToEjs[data].id %></th>
-      <td><%= data_SubjectToEjs[data].subject_name %></td>
-      <th>
-        <ol>
-      <% for(let i=0; i<data_SubjectToEjs[data].Teachers.length; i++){%>
-        <li>
-        <%= data_SubjectToEjs[data].Teachers[i].first_name %>
-        </li>
-      <%}%>
-        </ol>
-      </th>
-      <td>
-        <a class="button is-success is-outlined is-small" href='subject/<%=data_SubjectToEjs[data].id%>/enrolledstudents'>
+      <table class="table is-striped">
+        <tr>
+          <th>ID</th>
+          <th>SUBJECT NAME</th>
+          <th>TEACHER</th>
+          <th>STUDENTS</th>
+          <th>ACTIONS</th>
+
+        </tr>
+        <% for(let data=0; data<data_SubjectToEjs.length; data++){%>
+
+          <tr>
+            <th>
+              <%= data_SubjectToEjs[data].id %>
+            </th>
+            <td>
+              <%= data_SubjectToEjs[data].subject_name %>
+            </td>
+            <th>
+              <ol>
+                <% for(let i=0; i<data_SubjectToEjs[data].Teachers.length; i++){%>
+                  <li>
+                    <%= data_SubjectToEjs[data].Teachers[i].first_name %>
+                  </li>
+                  <%}%>
+              </ol>
+            </th>
+            <td>
+              <a class="button is-success is-outlined is-small" href='subject/<%=data_SubjectToEjs[data].id%>/enrolledstudents'>
             <span class="icon is-small">
               <i class="fa fa-list-alt"></i>
             </span>
           <span>Enrolled Students</span>
         </a>
-      </td>
-      <td style="margin-left:-5px;">
-            <a class="button is-info is-outlined is-small" href='subject/edit/<%=data_SubjectToEjs[data].id%>'>
+            </td>
+            <td style="margin-left:-5px;">
+              <a class="button is-info is-outlined is-small" href='subject/edit/<%=data_SubjectToEjs[data].id%>'>
               <span class="icon is-small">
                 <i class="fa fa-pencil"></i>
               </span>
               <span>Edit</span>
             </a>
-            <a onclick="myFunction()" class="button is-danger is-outlined is-small" href="subject/delete/<%=data_SubjectToEjs[data].id%>" >
+              <a onclick="myFunction()" class="button is-danger is-outlined is-small" href="subject/delete/<%=data_SubjectToEjs[data].id%>">
               <span class="icon is-small">
                 <i class="fa fa-times"></i>
               </span>
               <span>Delete</span>
             </a>
-      </td>
-      <!-- <td><%= data_SubjectToEjs[data].updatedAt %></td> -->
-      <!-- <td style="margin-left:-5px;"><a style="text-decoration: none;" href="subject/delete/<%=data_SubjectToEjs[data].id%>" onclick="myFunction()">Delete</a></td> -->
-    </tr>
-      <%}%>
-  </table>
+            </td>
+            <!-- <td><%= data_SubjectToEjs[data].updatedAt %></td> -->
+            <!-- <td style="margin-left:-5px;"><a style="text-decoration: none;" href="subject/delete/<%=data_SubjectToEjs[data].id%>" onclick="myFunction()">Delete</a></td> -->
+          </tr>
+          <%}%>
+      </table>
 
-<div style="text-align:left; margin-top:35px;">
-    <a class="button is-outlined" href='/subject/add'>add subject</a>
+      <div style="text-align:left; margin-top:35px;">
+        <a class="button is-outlined" href='/subject/add'>add subject</a>
+      </div>
+
+    </div>
+
   </div>
-
-</div>
-
-</div>
-<script>
-  function myFunction() {
-    confirm("Delete this Subject ?");
-  }
-</script>
+  <script>
+    function myFunction() {
+      confirm("Delete this Subject ?");
+    }
+  </script>
 </body>
+
 </html>
