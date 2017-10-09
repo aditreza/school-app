@@ -19,7 +19,7 @@ router.post('/', (req,res) =>{
 		}
 	}).then(dataUser=>{
 		// console.log(dataUser.password)
-		if(dataUser.password === req.body.your_password){
+		if(dataUser.username === req.body.your_user_name && dataUser.password === req.body.your_password){
 			req.session.username = req.body.your_user_name // session
 			req.session.role = dataUser.role // session
 			res.redirect('/') // minus title
