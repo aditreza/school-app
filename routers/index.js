@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router()
+const model = require('../models')
 
 
 router.use(function(req,res,next){
@@ -13,7 +14,9 @@ router.use(function(req,res,next){
 
 // get data
 router.get('/',(req,res)=>{
-  res.render('index', {title:'Home - School App', session:req.session})
+  // res.send(dataUser)
+  	res.render('index', {title:'Home - School App', session:req.session})
+  
 })
 
 

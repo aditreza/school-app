@@ -42,6 +42,7 @@ app.use('/subject', subject)
 app.use('/students', student)
 app.use('/logout', logout)
 
+app.listen(process.env.PORT || '3000')
 
 app.listen('3333',()=>{
   console.log('Serv listening')
