@@ -1,7 +1,7 @@
 {
   "name": "school-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "school management",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
